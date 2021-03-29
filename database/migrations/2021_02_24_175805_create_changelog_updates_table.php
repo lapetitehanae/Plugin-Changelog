@@ -13,9 +13,11 @@ class CreateChangelogUpdatesTable extends Migration
      */
     public function up()
     {
+        Schema::dropIfExists('changelog_updates');
+
         Schema::create('changelog_updates', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('category_id');
+            $table->unsignedBigInteger('category_id');
             $table->string('name');
             $table->text('description');
             $table->timestamps();
