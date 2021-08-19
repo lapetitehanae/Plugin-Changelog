@@ -1,9 +1,9 @@
 {
     "id": "changelog",
     "name": "Changelog",
-    "description": "Plugin changelog for Azuriom",
-    "version": "1.0.1",
-    "url": "https://azuriom.com",
+    "description": "Add a changelog to your website.",
+    "version": "1.1.0",
+    "url": "https://azuriom.com/market/resources/53",
     "authors": [
         "Bryan M."
     ],

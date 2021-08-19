@@ -21,7 +21,7 @@ class RouteServiceProvider extends BaseRouteServiceProvider
      */
     public function loadRoutes()
     {
-        $this->mapApiRoutes();
+        // $this->mapApiRoutes();
 
         $this->mapPluginsRoutes();
 

@@ -1,3 +1,3 @@
 # Plugin-Changelog
 
-Add a Changelog in your website.
+Add a changelog to your website.

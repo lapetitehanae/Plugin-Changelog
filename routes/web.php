@@ -1,6 +1,5 @@
 <?php
 
-use Azuriom\Plugin\Changelog\Controllers\ChangelogHomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,5 +14,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'CategoryController@index')->name('home');
+Route::get('/', 'CategoryController@index')->name('index');
 Route::resource('categories', 'CategoryController')->only('show');

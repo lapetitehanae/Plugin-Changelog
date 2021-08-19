@@ -15,7 +15,7 @@ class ChangelogServiceProvider extends BasePluginServiceProvider
      */
     public function register()
     {
-        $this->registerMiddlewares();
+        // $this->registerMiddlewares();
 
         //
     }
@@ -39,9 +39,7 @@ class ChangelogServiceProvider extends BasePluginServiceProvider
 
         $this->registerAdminNavigation();
 
-        $this->registerUserNavigation();
-
-        Paginator::useBootstrap();
+        // $this->registerUserNavigation();
 
         Permission::registerPermissions(['changelog.admin' => 'changelog::admin.permissions.admin']);
     }
@@ -54,7 +52,7 @@ class ChangelogServiceProvider extends BasePluginServiceProvider
     protected function routeDescriptions()
     {
         return [
-            'changelog.index' => 'changelog::messages.plugin_name',
+            'changelog.index' => 'changelog::messages.title',
         ];
     }
 
@@ -72,18 +70,6 @@ class ChangelogServiceProvider extends BasePluginServiceProvider
                 'route' => 'changelog.admin.updates.index',
                 'permission' => 'changelog.admin',
             ],
-        ];
-    }
-
-    /**
-     * Return the user navigations routes to register in the user menu.
-     *
-     * @return array
-     */
-    protected function userNavigation()
-    {
-        return [
-            //
         ];
     }
 }

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Changelog')
+@section('title', trans('changelog::messages.title'))
 
 @section('content')
 <div class="container content">

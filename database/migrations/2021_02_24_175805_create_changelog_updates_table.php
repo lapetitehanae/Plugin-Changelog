@@ -22,7 +22,7 @@ class CreateChangelogUpdatesTable extends Migration
             $table->text('description');
             $table->timestamps();
 
-            $table->foreign('category_id')->references('id')->on('changelog_categories');
+            $table->foreign('category_id')->references('id')->on('changelog_categories')->cascadeOnDelete();
         });
     }
 

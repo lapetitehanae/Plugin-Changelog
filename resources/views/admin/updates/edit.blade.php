@@ -5,21 +5,21 @@
 @include('admin.elements.editor')
 
 @section('content')
-<div class="card shadow mb-4">
- <div class="card-body">
-  <form action="{{ route('changelog.admin.updates.update', $update) }}" method="POST" enctype="multipart/form-data">
-   @method('PUT')
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <form action="{{ route('changelog.admin.updates.update', $update) }}" method="POST">
+                @method('PUT')
 
-   @include('changelog::admin.updates._form')
+                @include('changelog::admin.updates._form')
 
-   <button type="submit" class="btn btn-primary">
-    <i class="fas fa-save"></i> {{ trans('messages.actions.save') }}
-   </button>
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-save"></i> {{ trans('messages.actions.save') }}
+                </button>
 
-   <a href="{{ route('changelog.admin.updates.destroy', $update) }}" class="btn btn-danger" data-confirm="delete">
-    <i class="fas fa-trash"></i> {{ trans('messages.actions.delete') }}
-   </a>
-  </form>
- </div>
-</div>
+                <a href="{{ route('changelog.admin.updates.destroy', $update) }}" class="btn btn-danger" data-confirm="delete">
+                    <i class="fas fa-trash"></i> {{ trans('messages.actions.delete') }}
+                </a>
+            </form>
+        </div>
+    </div>
 @endsection

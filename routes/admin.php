@@ -1,6 +1,5 @@
 <?php
 
-use Azuriom\Plugin\Changelog\Controllers\Admin\AdminController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,10 +15,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::middleware('can:changelog.admin')->group(function () {
- Route::post('/settings', 'SettingsController@save')->name('settings.save');
+    Route::resource('categories', 'CategoryController')->except(['index', 'show']);
+    Route::resource('updates', 'UpdateController')->except('show');
 
- Route::resource('categories', 'CategoryController')->except(['index', 'show']);
- Route::resource('updates', 'UpdateController')->except('show');
-
- Route::post('/updates/update-order', 'CategoryController@updateOrder')->name('categories.update-order');
+    Route::post('/updates/update-order', 'CategoryController@updateOrder')->name('categories.update-order');
 });
