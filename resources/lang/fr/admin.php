@@ -27,4 +27,8 @@ return [
             'deleted' => 'Mise à jour supprimée.',
         ],
     ],
+
+    'permissions' => [
+        'admin' => 'Modifier le changelog',
+    ],
 ];

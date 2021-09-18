@@ -103,7 +103,11 @@
                             <tr>
                                 <th scope="row">{{ $update->id }}</th>
                                 <td>{{ $update->name }}</td>
-                                <td>{{ $update->category->name }}</td>
+                                <td>
+                                    <a href="{{ route('changelog.categories.show', $update->category) }}" target="_blank">
+                                        {{ $update->category->name }}
+                                    </a>
+                                </td>
                                 <td>{{ format_date_compact($update->created_at) }}</td>
                                 <td>
                                     <a href="{{ route('changelog.admin.updates.edit', $update) }}" class="mx-1"

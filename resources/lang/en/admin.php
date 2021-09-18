@@ -28,4 +28,8 @@ return [
             'deleted' => 'Update deleted.',
         ],
     ],
+
+    'permissions' => [
+        'admin' => 'Edit changelog',
+    ],
 ];
