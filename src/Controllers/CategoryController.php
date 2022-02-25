@@ -15,13 +15,13 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $category = Category::scopes(['enabled'])->first();
+        $category = Category::enabled()->first();
 
         if ($category === null) {
             return view('changelog::index');
         }
 
-        return $this->show($category);
+        return $this->showCategory();
     }
 
     /**
@@ -32,22 +32,22 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        $categories = Category::scopes(['enabled'])
-            ->withCount('updates')
-            ->get()
-            ->filter(function (Category $cat) use ($category) {
-                return $cat->is($category) || $cat->updates_count >= 0;
-            });
-
         foreach ($category->updates as $update) {
             $update->setRelation('category', $category);
         }
 
+        return $this->showCategory($category);
+    }
+
+    protected function showCategory(Category $category = null)
+    {
+        $categories = Category::enabled()->withCount('updates')->get();
+
         return view('changelog::show', [
             'category' => $category,
+            'updates' => $category !== null ? $category->updates : Update::all(),
             'categories' => $categories,
-            'updates' => Update::all(),
-            'displayAll' => request()->route('category') === null,
+            'totalUpdates' => Update::count(),
         ]);
     }
 }

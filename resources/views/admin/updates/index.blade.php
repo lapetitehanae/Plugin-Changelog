@@ -2,14 +2,6 @@
 
 @section('title', trans('changelog::admin.title'))
 
-@push('styles')
-    <style>
-        #categories > .sortable-dropdown {
-            padding-bottom: 1rem;
-        }
-    </style>
-@endpush
-
 @push('footer-scripts')
     <script src="{{ asset('vendor/sortablejs/Sortable.min.js') }}"></script>
     <script>
@@ -66,9 +58,8 @@
                 @each('changelog::admin.categories._category', $categories, 'category')
             </ol>
 
-            <a href="{{ route('changelog.admin.categories.create') }}" class="btn btn-primary"><i
-                        class="fas fa-plus"></i>
-                {{ trans('messages.actions.add') }}
+            <a href="{{ route('changelog.admin.categories.create') }}" class="btn btn-primary">
+                <i class="fas fa-plus"></i> {{ trans('messages.actions.add') }}
             </a>
 
             @if(! $categories->isEmpty())
@@ -128,8 +119,8 @@
                     <i class="fas fa-plus"></i> {{ trans('messages.actions.add') }}
                 </a>
             @else
-                <div class="alert alert-danger mb-0">
-                    <i class="fas fa-exclamation-circle pr-2"></i> {{ trans('changelog::admin.categories.nothing') }}
+                <div class="alert alert-warning mb-0">
+                    <i class="fas fa-exclamation-circle"></i> {{ trans('changelog::admin.categories.nothing') }}
                 </div>
             @endif
         </div>

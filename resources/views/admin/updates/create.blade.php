@@ -1,6 +1,6 @@
 @extends('admin.layouts.admin')
 
-@section('title', trans('changelog::admin.updates.title-create'))
+@section('title', trans('changelog::admin.updates.create'))
 
 @include('admin.elements.editor')
 

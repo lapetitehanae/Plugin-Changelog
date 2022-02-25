@@ -1,6 +1,6 @@
 @extends('admin.layouts.admin')
 
-@section('title', trans('changelog::admin.updates.title-edit', ['update' => $update->id]))
+@section('title', trans('changelog::admin.updates.edit', ['update' => $update->id]))
 
 @include('admin.elements.editor')
 

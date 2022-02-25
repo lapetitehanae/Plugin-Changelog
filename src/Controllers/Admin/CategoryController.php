@@ -30,7 +30,7 @@ class CategoryController extends Controller
         Category::create($request->validated());
 
         return redirect()->route('changelog.admin.updates.index')
-            ->with('success', trans('changelog::admin.categories.status.created'));
+            ->with('success', trans('messages.status.success'));
     }
 
     /**
@@ -71,7 +71,7 @@ class CategoryController extends Controller
         }
 
         return response()->json([
-            'message' => trans('changelog::admin.categories.status.order-updated'),
+            'message' => trans('changelog::admin.categories.updated'),
         ]);
     }
 
@@ -87,7 +87,7 @@ class CategoryController extends Controller
         $category->update($request->validated());
 
         return redirect()->route('changelog.admin.updates.index')
-            ->with('success', trans('changelog::admin.categories.status.updated'));
+            ->with('success', trans('messages.status.success'));
     }
 
     /**
@@ -107,6 +107,6 @@ class CategoryController extends Controller
         $category->delete();
 
         return redirect()->route('changelog.admin.updates.index')
-            ->with('success', trans('changelog::admin.categories.status.deleted'));
+            ->with('success', trans('messages.status.success'));
     }
 }

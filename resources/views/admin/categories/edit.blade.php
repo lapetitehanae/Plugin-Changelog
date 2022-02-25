@@ -1,14 +1,13 @@
 @extends('admin.layouts.admin')
 
-@section('title', trans('changelog::admin.categories.title-edit', ['category' => $category->id]))
+@section('title', trans('changelog::admin.categories.edit', ['category' => $category->id]))
 
 @include('admin.elements.editor')
 
 @section('content')
     <div class="card shadow mb-4">
         <div class="card-body">
-            <form action="{{ route('changelog.admin.categories.update', $category) }}" method="POST"
-                  enctype="multipart/form-data">
+            <form action="{{ route('changelog.admin.categories.update', $category) }}" method="POST" enctype="multipart/form-data">
                 @method('PUT')
 
                 @include('changelog::admin.categories._form')
