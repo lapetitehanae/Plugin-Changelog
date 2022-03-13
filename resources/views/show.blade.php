@@ -17,10 +17,10 @@
 
                         <p>
                             <span class="badge bg-primary me-1 small">
-                                <i class="fas fa-folder"></i> {{ $update->category->name }}
+                                <i class="bi bi-folder"></i> {{ $update->category->name }}
                             </span>
                             <span class="badge bg-primary me-1 small">
-                                <i class="fas fa-calendar-week"></i> {{ format_date($update->created_at) }}
+                                <i class="bi bi-calendar"></i> {{ format_date($update->created_at) }}
                             </span>
                         </p>
 

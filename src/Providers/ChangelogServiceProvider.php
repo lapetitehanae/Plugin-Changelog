@@ -66,7 +66,7 @@ class ChangelogServiceProvider extends BasePluginServiceProvider
         return [
             'changelog' => [
                 'name' => trans('changelog::admin.nav.title'),
-                'icon' => 'fas fa-clipboard-list',
+                'icon' => 'bi bi-list-check',
                 'route' => 'changelog.admin.updates.index',
                 'permission' => 'changelog.admin',
             ],
